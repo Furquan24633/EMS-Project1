@@ -1,18 +1,24 @@
 import React from 'react'
 
-const CompleteTask = ({data}) => {
+const CompleteTask = ({ data }) => {
   return (
-    <div className='flex-shrink-0 h-full w-[300px] bg-blue-400 rounded-xl p-5 '>
-    <div className='flex justify-between items-center'>
-      <h3 className='bg-red-600 px-3 py-1 rounded text-sm'>{data.category}</h3>
-      <h4 className='text-sm font-semibold'>{data.taskDate}</h4>
+    <div className='rounded-[32px] border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/20'>
+      <div className='flex items-center justify-between gap-4'>
+        <span className='rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-emerald-200'>Completed</span>
+        <span className='text-sm text-slate-400'>{data.taskDate}</span>
+      </div>
+
+      <div className='mt-5 flex items-center justify-between gap-3'>
+        <span className='rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-slate-200'>{data.category}</span>
+      </div>
+
+      <h2 className='mt-5 text-2xl font-semibold text-white'>{data.taskTitle}</h2>
+      <p className='mt-3 text-sm leading-6 text-slate-300'>{data.taskDescription}</p>
+
+      <div className='mt-6'>
+        <button className='w-full rounded-2xl bg-blue-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-blue-400'>Complete</button>
+      </div>
     </div>
-    <h2 className='mt-5 text-2xl font-semibold'>{data.taskTitle}</h2>
-    <p className='mt-2 text-sm'>{data.taskDescription}</p>
-    <div className='flex justify-between mt-4'>
-    <button className='bg-blue-600 py-1 px-2 text-sm w-full rounded'>Complete</button>
-    </div>
-  </div>
   )
 }
 

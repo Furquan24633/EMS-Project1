@@ -1,23 +1,25 @@
 import React from 'react'
 
-const AcceptTask = ({data}) => {
-  console.log(data.taskTitle);
-  
+const AcceptTask = ({ data }) => {
   return (
-    <div className='flex-shrink-0 h-full w-[300px] bg-red-400 rounded-xl p-5 '>
-    <div className='flex justify-between items-center'>
-      <h3 className='bg-red-600 px-3 py-1 rounded text-sm'>{data.category}</h3>
-      <h4 className='text-sm font-semibold'>{data.taskDate}</h4>
-    </div>
-    <h2 className='mt-5 text-2xl font-semibold'>{data.taskTitle}</h2>
-    <p className='mt-2 text-sm'>{data.taskDescription}</p>
+    <div className='rounded-[32px] border border-white/10 bg-slate-950/80 p-6 shadow-2xl shadow-slate-950/20'>
+      <div className='flex items-center justify-between gap-4'>
+        <span className='rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold uppercase tracking-[0.15em] text-emerald-200'>Accepted</span>
+        <span className='text-sm text-slate-400'>{data.taskDate}</span>
+      </div>
 
-    <div className='flex justify-between mt-4'>
-        <button className='bg-green-500 py-1 px-2 text-sm font-semibold rounded'>Mark as Completed</button>
-        <button className='bg-red-500 py-1 px-2 text-sm font-semibold rounded'>Mark as Failed</button>
-    </div>
+      <div className='mt-5 flex items-center justify-between gap-3'>
+        <span className='rounded-full bg-white/5 px-3 py-1 text-xs font-semibold text-slate-200'>{data.category}</span>
+      </div>
 
-  </div>
+      <h2 className='mt-5 text-2xl font-semibold text-white'>{data.taskTitle}</h2>
+      <p className='mt-3 text-sm leading-6 text-slate-300'>{data.taskDescription}</p>
+
+      <div className='mt-6 flex flex-col gap-3 sm:flex-row'>
+        <button className='w-full rounded-2xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400'>Mark as Completed</button>
+        <button className='w-full rounded-2xl bg-rose-500 px-4 py-3 text-sm font-semibold text-white transition hover:bg-rose-400'>Mark as Failed</button>
+      </div>
+    </div>
   )
 }
 
